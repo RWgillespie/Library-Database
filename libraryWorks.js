@@ -14,7 +14,10 @@ function bookMaker(firstBook) {
     let eachButton=document.createElement('button');
     eachButton.innerText="I've read this";
     eachButton.style.marginLeft="10px";
-    eachButton.addEventListener('click', ()=>readBook());
+    eachButton.addEventListener('click', function() {
+        eachBook.classList.add('remove')
+        removeBook();
+    });
     eachBook.append(eachButton);
     bookList.append(eachBook);
  
@@ -23,7 +26,9 @@ function bookMaker(firstBook) {
 function makeList(){
     library.forEach(bookMaker);
 };
+
 makeList();//put the list out the first time;
+
 //create the ability to add a book
 let addBook=document.querySelector('.redButton');
 addBook.addEventListener('click', function() {
@@ -37,6 +42,8 @@ addBook.addEventListener('click', function() {
 });
 
 //make a function that removes books from the array
-function readBook() {
-    console.log("I've read this");
+function removeBook() {
+    const removals = document.querySelectorAll('.remove');
+    console.log(removals);  
+    removals.forEach( book => bookList.removeChild(book));
 }
