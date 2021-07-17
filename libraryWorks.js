@@ -14,6 +14,7 @@ function bookMaker(firstBook) {
     let eachButton=document.createElement('button');
     eachButton.innerText="I've read this";
     eachButton.style.marginLeft="10px";
+    eachButton.addEventListener('click', ()=>readBook());
     eachBook.append(eachButton);
     bookList.append(eachBook);
  
@@ -36,8 +37,6 @@ addBook.addEventListener('click', function() {
 });
 
 //make a function that removes books from the array
-
-c
-function removeBook(bookTitle) {
-    console.log(bookTitle);
+function readBook() {
+    console.log("I've read this");
 }
